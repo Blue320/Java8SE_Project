@@ -1,25 +1,37 @@
 package workshop.account.entity;
 
 public class Account {
-	private string custID;
-	private string acctID;
+	private String custId;
+	private String acctId;
 	private int balance;
 	
+	//default construtor 선언
+	public Account() {
+		System.out.println("Account 기본생성자가 호출됨!");
+	}
+	
+	public Account(String custId, String acctId, int balance) {
+		System.out.println("오버로딩된 생성자 호출됨!");
+		this.custId = custId;
+		this.acctId = acctId;
+		this.balance = balance;
+	}
+	
 	//getter method
-	public string getCustID() {
-		return custID;
+	public String getCustId() {
+		return custId;
 	}
 	//setter
-	public void setCustID(string custID) {
-		this.custID = custID;
+	public void setCustId(String custId) {
+		this.custId = custId;
 	}
 
-	public string getAcctID() {
-		return acctID;
+	public String getAcctId() {
+		return acctId;
 	}
 
-	public void setAcctID(string acctID) {
-		this.acctID = acctID;
+	public void setAcctId(String acctId) {
+		this.acctId = acctId;
 	}
 
 	public int getBalance() {
@@ -35,4 +47,12 @@ public class Account {
 	public void withdraw(int amount) {
 		this.balance -= amount;
 	}
+	
+	//Method Overriding
+	@Override //메소드 선언부가 같은지 확인해주는 역할
+	public String toString() {
+		return "Account [고객번호=" + custId + ", 계좌번호=" + acctId + ", 잔액=" + balance + "]";
+	}
+	
+	
 }
