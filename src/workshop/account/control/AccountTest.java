@@ -7,6 +7,12 @@ public class AccountTest {
 	public static void main(String[] args) {
 		// try - catch 구문
 		try {
+			Account account2 = new Account("A1200", "221-22-3488", 20000);
+			//getClass().getName() + '@' + Integer.toHexString(hashCode())
+			// 출금
+			account2.withdraw(500000);
+			System.out.println(account2.toString());
+			
 			Account account = new Account();
 			
 			//setter 메서드를 호출하여 Account 변수의 값을 변경 요청
@@ -19,13 +25,8 @@ public class AccountTest {
 			System.out.println("계좌번호= " + account.getAcctId());
 			System.out.println("잔액= " + account.getBalance());
 			
-			Account account2 = new Account("A1200", "221-22-3488", 20000);
-			//getClass().getName() + '@' + Integer.toHexString(hashCode())
-			// 출금
-			account2.withdraw(500000);
-			System.out.println(account2.toString());
 		}catch(InsufficientBalanceException exp) {
-			System.out.println("Error 메시지= " + exp.getMessage());
+			System.out.println("Error 메시지= " + exp.getMessage() + exp.getCurrentBalance() +"원 입니다.");
 		}
 	}
 }
