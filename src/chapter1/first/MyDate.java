@@ -40,4 +40,5 @@ public class MyDate{
     public void setYear( int newYear ){
     	year = newYear;
     }
+    
 }
