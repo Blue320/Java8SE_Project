@@ -42,6 +42,7 @@ public class Account {
 	
 	//입금
 	public void deposit(int amount) {
+		System.out.println(amount + "원이 입금되었습니다.");
 		this.balance += amount;
 	}
 	
