@@ -13,14 +13,20 @@ public class Library {
         this.books = new ArrayList<>(); // 빈 도서 목록 초기화
 	}
 	public String getName() {
+		return name;
 	}
 	public void addBook(Book book) {
 		if (book != null) {
 	        books.add(book);
+	        System.out.println("도서가 추가되었습니다: " + book.getTitle());
 	    }
 	}
 	
-	public Book findBookByTitle(String title) {
+	public Book findBookByTitle(Book title) {
+		for (book : books) {
+			this.title == book;
+			System.out.println('일치');
+		}
 	}
 	public List<Book> findBooksByAuthor(String author) {
 	}

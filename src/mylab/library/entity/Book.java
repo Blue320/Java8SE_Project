@@ -8,6 +8,7 @@ public class Book {
 	private boolean isAvailable;
 	
 	public Book() {
+		this.isAvailable = true;
 	}
 	
 	public Book(String title, String author, String isbn, int publishYear) {
@@ -15,7 +16,7 @@ public class Book {
 		this.author = author;
 		this.isbn = isbn;
 		this.publishYear = publishYear;
-		isAvailable = true;
+		this.isAvailable = true;
 	}
 	
 	public String getTitle() {
@@ -57,6 +58,9 @@ public class Book {
 	public boolean checkOut() {
 		if (this.isAvailable == true) {
 			isAvailable = false;
+			return true;
+		}
+		else {
 			return false;
 		}
 		
@@ -68,10 +72,6 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return this.title;
-		return this.author;
-		return this.isbn;
-		return this.publishYear;
-		return this.isAvailable;
+		return "책 제목: " + title + "\t저자: " + author + "\tISBN: " + isbn + "\t출판년도: " + publishYear + "\t대출 가능 여부: " + (isAvailable ? "가능" : "대출 중";)
 	}
 }
