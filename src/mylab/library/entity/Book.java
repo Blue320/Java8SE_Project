@@ -72,6 +72,10 @@ public class Book {
 	
 	@Override
 	public String toString() {
-		return "책 제목: " + title + "\t저자: " + author + "\tISBN: " + isbn + "\t출판년도: " + publishYear + "\t대출 가능 여부: " + (isAvailable ? "가능" : "대출 중";)
+	    return "책 제목: " + title + "\t" +
+	           "저자: " + author + "\t" +
+	           "ISBN: " + isbn + "\t" +
+	           "출판년도: " + publishYear + "\t" +
+	           "대출 가능 여부: " + (isAvailable ? "가능" : "대출 중");
 	}
 }
