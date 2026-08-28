@@ -24,7 +24,8 @@ public class Account {
 	}
 	
 	public void deposit(double amount) {
-		this.balance += amount;
+	    this.balance += amount;
+	    System.out.println(amount + "원이 입금되었습니다. 현재 잔액: " + balance + "원");
 	}
 	
 	public void withdraw(double amount) throws InsufficientBalanceException{
@@ -37,6 +38,6 @@ public class Account {
 	
 	@Override
 	public String toString() {
-		return "계좌번호: " + accountNumber + ", 소유자: " + ownerName + ", 잔액: " + balance;
+		return "계좌번호: " + accountNumber + ", 소유자: " + ownerName + ", 잔액: " + balance + "원";
 	}
 }

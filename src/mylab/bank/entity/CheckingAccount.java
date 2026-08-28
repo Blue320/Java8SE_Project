@@ -15,11 +15,12 @@ public class CheckingAccount extends Account {
 		return withdrawalLimit;
 	}
 	
-	public void withdraw(double withdrawalLimit) throws InsufficientBalanceException {
-		if (amount > withdrawalLimit) {
-            throw new WithdrawalLimitExceededException("출금 한도를 초과했습니다. 한도: " + withdrawalLimit + "원");
-        }
-        super.withdraw(amount);
+	@Override
+	public void withdraw(double amount) throws InsufficientBalanceException {
+	    if (amount > withdrawalLimit) {
+	        throw new WithdrawalLimitExceededException("출금 한도를 초과했습니다. 한도: " + withdrawalLimit + "원");
+	    }
+	    super.withdraw(amount);
 	}
 	
 	@Override
