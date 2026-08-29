@@ -1,8 +1,13 @@
 package study.student.exception;
 
 public class InvalidGradeException extends Exception {
-	public InvalidGradeException(String message) {
+	private int invalidGrade;
+	
+	public InvalidGradeException(String message, int grade) {
 		super(message);
-		System.out.println(message);
+		invalidGrade = grade;
+	}
+	public int getInvalidGrade() {
+		return invalidGrade;
 	}
 }
